@@ -26,7 +26,7 @@ function validationCheck(ex) {
             checkingTemplate = /^[0-9]{4} ?[0-9]{4} ?[0-9]{4} ?[0-9]{4}$/;
             break;
         default:
-            console.log("none of them selected. then how code even come to this part!")
+            console.log("none of them selected. then how code even came to this part!");
             break;
     }
 
@@ -37,7 +37,6 @@ function validationCheck(ex) {
 
 
 //this section is for finding the first number inside a string
-//last index of first number
 function lastIndex(str, startDigit) {
     let re = /[^0-9]/;
     console.log(str);
@@ -59,11 +58,11 @@ function numberCheck(e) {
     if(numberEx.test(str)) {
         let startDigit = str.match(numberEx).index;
 
-        //first number's last index
         let endDigit = lastIndex(str, startDigit);
-        console.log(startDigit, endDigit, parseInt(str.substring(startDigit, endDigit+1)));
+        let theNumber = parseInt(str.substring(startDigit, endDigit+1));
+        console.log(startDigit, endDigit, theNumber);
     
-        alert("the number is: " + parseInt(str.substring(startDigit, endDigit+1)));
+        alert("the number is: " + theNumber);
     } else {
         alert("no number found");
     }
